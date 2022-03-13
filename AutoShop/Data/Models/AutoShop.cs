@@ -10,6 +10,7 @@ namespace AutoShop1.Models
 
         }
         public int IdCar { get; set; }
+        public int IdShop { get; set; }
         public string CarName { get; set; }
         public string Manifacture { get; set; }
         public string CarLocation { get; set; }

@@ -1,4 +1,5 @@
 ﻿using AutoShop1.Controller;
+using AutoShop1.Data.Models;
 using AutoShop1.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace AutoShop1.Views
     {
         CarController carController = new CarController();
         private int closeOperationId;
+        ShopController shopController = new ShopController();
 
         public Display()
     {
@@ -31,8 +33,17 @@ namespace AutoShop1.Views
         autoshop.CarLocation = Console.ReadLine();
         carController.Add(autoshop);
     }
-        
-    private void ListAll()
+
+        private void AddShop()
+        {
+            Shop shop = new Shop();
+            Console.WriteLine("Enter name for shop: ");
+            shop.nameShop = Console.ReadLine();
+            Console.WriteLine("Enter city for shop: ");
+            shop.cityShop = Console.ReadLine();
+            shopController.Add(shop);
+        }
+        private void ListAll()
     {
         Console.WriteLine(new string('-' ,40));
         Console.WriteLine(new string (' ', 16)+"PRODUCTS" +new string (' ', 16));
@@ -112,7 +123,8 @@ namespace AutoShop1.Views
             Console.WriteLine("3. Update cars");
             Console.WriteLine("4. Fetch cars by ID");
             Console.WriteLine("5. Delete cars by ID");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. Add new Shop ");
+            Console.WriteLine("7. Exit");
         }
         private void Input()
         {
@@ -138,6 +150,9 @@ namespace AutoShop1.Views
                         break;
                     case 5:
                         Delete();
+                        break;
+                    case 6:
+                        AddShop();
                         break;
                     default:
                         break;
