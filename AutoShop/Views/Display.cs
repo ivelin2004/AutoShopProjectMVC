@@ -138,17 +138,15 @@ namespace AutoShop1.Views
                     case 2:
                         Add();
                         break;
+                    
                     case 3:
-                        Update();
-                        break;
-                    case 4:
                         Fetch();
                         break;
-                    case 5:
+                    case 4:
                         Delete();
                         break;
-                    case 6:
-                        AddShop();
+                    case 5:
+                        
                         break;
                     default:
                         break;
