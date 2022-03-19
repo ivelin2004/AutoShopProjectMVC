@@ -21,52 +21,14 @@ namespace AutoShop1.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=18-07\\SQLEXPRESS;Database=Auto_Shop;Integrated Security=True;");
+                optionsBuilder.UseSqlServer("Server=18-07\\SQLEXPRESS;Database=ShopCar;Integrated Security=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
-
-            modelBuilder.Entity<AutoShop>(entity =>
-            {
-                entity.HasKey(e => e.IdCar);
-
-                entity.ToTable("auto_shop");
-
-                entity.Property(e => e.IdCar)
-                    .HasColumnName("id_car")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.CarColor)
-                    .HasColumnName("car_color")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CarLocation)
-                    .HasColumnName("car_location")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CarName)
-                    .HasColumnName("car_name")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CarPower)
-                    .HasColumnName("car_power")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CarPrice)
-                    .HasColumnName("car_price")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.CarTransmission)
-                    .HasColumnName("car_transmission")
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.Manifacture)
-                    .HasColumnName("manifacture")
-                    .HasMaxLength(50);
-            });
+            modelBuilder.Entity<AutoShop>().HasKey(x => x.IdCar).HasName("PK_Test");
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

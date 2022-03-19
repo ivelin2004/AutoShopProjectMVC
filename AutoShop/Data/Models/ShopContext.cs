@@ -28,24 +28,8 @@ namespace AutoShop1.Data.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("ProductVersion", "2.2.2-servicing-10034");
-
-            modelBuilder.Entity<Shop>(entity =>
-            {
-                entity.HasKey(e => e.nameShop);
-
-                entity.ToTable("name_shop");
-
-                entity.Property(e => e.IdShop)
-                    .HasColumnName("id_shop")
-                    .ValueGeneratedNever();
-
-                entity.Property(e => e.cityShop)
-                    .HasColumnName("city_shop")
-                    .HasMaxLength(50);
-
-               
-            });
+            modelBuilder.Entity<Shop>().HasKey(x => x.IdShop).HasName("PK_Shop5");
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

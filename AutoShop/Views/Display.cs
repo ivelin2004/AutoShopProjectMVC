@@ -53,7 +53,7 @@ namespace AutoShop1.Views
         var autoshop = carController.GetAll();
         foreach (var item in autoshop)
         {
-            Console.WriteLine("{0} {1} {2} {3} {4} {5}", item.CarLocation, item.CarName, item.CarPrice , item.CarColor , item.CarPower , item.CarTransmission);
+            Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}",item.IdCar, item.CarLocation, item.CarName, item.CarPrice , item.CarColor , item.CarPower , item.CarTransmission);
         }
             
     }
@@ -65,19 +65,17 @@ namespace AutoShop1.Views
         AutoShop autoshop = carController.Get(id);
         if (autoshop != null)
         {
-               
+
                 Console.WriteLine("Enter name: ");
-                autoshop.CarName = (Console.ReadLine());
+                autoshop.CarName = Console.ReadLine();
                 Console.WriteLine("Enter price: ");
-                autoshop.CarPrice = (Console.ReadLine());
+                autoshop.CarPrice = Console.ReadLine();
                 Console.WriteLine("Enter horsepower: ");
-                autoshop.CarPower = (Console.ReadLine());
+                autoshop.CarPower = Console.ReadLine();
                 Console.WriteLine("Enter transmission type: ");
-                autoshop.CarTransmission = (Console.ReadLine());
+                autoshop.CarTransmission = Console.ReadLine();
                 Console.WriteLine("Enter location: ");
-                autoshop.CarLocation = (Console.ReadLine());
-                Console.WriteLine("Enter transmission type: ");
-                autoshop.CarTransmission =(Console.ReadLine());
+                autoshop.CarLocation = Console.ReadLine();
 
                 carController.Add(autoshop);
 
@@ -120,11 +118,9 @@ namespace AutoShop1.Views
             Console.WriteLine(new string(' ', 18) + "MENU" + new string(' ', 18));
             Console.WriteLine("1. List all cars");
             Console.WriteLine("2. Add new cars");
-            Console.WriteLine("3. Update cars");
-            Console.WriteLine("4. Fetch cars by ID");
-            Console.WriteLine("5. Delete cars by ID");
-            Console.WriteLine("6. Add new Shop ");
-            Console.WriteLine("7. Exit");
+            Console.WriteLine("3. Fetch cars by ID");
+            Console.WriteLine("4. Delete cars by ID");
+            Console.WriteLine("5. Exit");
         }
         private void Input()
         {
